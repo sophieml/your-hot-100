@@ -19,7 +19,7 @@ def main():
     page = resp.json()
     n_pages = page['recenttracks']['@attr']['totalPages']
     curr_tracks = page['recenttracks']['track']
-
+    print(n_pages)
     if '@attr' in curr_tracks[0]:
         t = int(time.time())
         tracks.append({'date': datetime.utcfromtimestamp(t).strftime('%d %b %Y, %H:%M'),
@@ -56,7 +56,7 @@ def main():
                            'track': scrobble['name'],
                            'album_art_url': scrobble['image'][3]['#text']})
         print("done with page", n)
-        time.sleep(0.5)
+        time.sleep(1)
     tracks = pd.DataFrame(tracks)
     print(tracks)
 

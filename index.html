@@ -211,7 +211,7 @@
 
         d3.select('.year').text(startYear);
 
-        xScale.domain([0, getMax(selectedData)['value'] + 10]);
+        xScale.domain([0, 1.2 * getMax(selectedData)['value']]);
         yScale.domain(geoAreas);
         drawXAxis(svg, selectedData);
         drawYAxis(svg, selectedData);
@@ -229,7 +229,7 @@
 
           yScale.domain(selectedData.map(yAccessor));
           // update(selectedData)
-          xScale.domain([0, getMax(selectedData)['value'] + 10]);
+          xScale.domain([0, 1.2 * getMax(selectedData)['value']]);
           drawXAxis(svg, selectedData, t);
           drawYAxis(svg, selectedData, t);
           drawBars(svg, selectedData, t);
